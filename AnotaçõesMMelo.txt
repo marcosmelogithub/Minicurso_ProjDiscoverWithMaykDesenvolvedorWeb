@@ -1,0 +1,153 @@
+===================================================================
+Preparando o vscode
+===================================================================
+1) instalar as extensões prettier, material-icon-theme, omni-theme e liveserver, conforme a lista abaixo:
+      {
+          "recommendations": [
+            "esbenp.prettier-vscode",
+            "PKief.material-icon-theme",
+            "rocketseat.theme-omni",
+            "ritwickdey.LiveServer"
+          ]
+        }
+2) criar uma pasta chamada .vscode
+3) criar o arquivo extensions.json na pasta .vscode
+4) copiar/colar o conteúdo do item 1) no extensions.json e salvar
+5) criar o arquivo settings.json na pasta .vscode
+6) copiar/colar o conteúdo abaixo no arquivo settings.json
+        {
+            // editor
+            "editor.wordWrap": "on",
+            "editor.fontSize": 18,
+            "editor.lineHeight": 30,
+            "editor.tabSize": 2,
+            "editor.bracketPairColorization.enabled": true,
+            "editor.guides.bracketPairs": true,
+            "editor.minimap.enabled": false,
+            "editor.formatOnSave": true,
+            "editor.formatOnPaste": true,
+            "files.autoSave": "afterDelay",
+          
+            // explorer
+            "explorer.compactFolders": false,
+          
+            // workbench
+            "workbench.editor.enablePreview": false,
+            "workbench.iconTheme": "material-icon-theme",
+            "workbench.colorTheme": "Omni",
+          
+            // prettier
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "prettier.enable": true,
+            "prettier.singleQuote": false,
+            "prettier.tabWidth": 2,
+            "prettier.semi": false,
+          
+            // terminal
+            "terminal.integrated.fontSize": 16,
+            "terminal.integrated.profiles.windows": {
+              "Git Bash": {
+                "source": "Git Bash"
+              }
+            },
+            "terminal.integrated.defaultProfile.windows": "Git Bash"
+          }
+
+===================================================================
+Executando o index.html
+===================================================================
+Executar o index.html pelo liveserver.
+Basta selecionar o index.html e com botão da direita escolher o liveserver
+Se abrirá uma aba do browser que se atualizará automaticamente à medida que o projeto for sendo desenvolvido
+
+===================================================================
+Link para o projeto no sigma
+https://www.figma.com/file/YmIKTshJeKrM3198Fcqkwz/DevLinks-%E2%80%A2-Projeto-Discover-(Community)?type=design&node-id=58-415&mode=design&t=ukknG0MmT04WlSgO-0
+===================================================================
+
+===================================================================
+Como funciona o rgba
+===================================================================
+  r(ed) 0-255, sendo que 0 é cor mais escura (preto absoluto) e 255 a cor mais forte
+  g(reen) 0-255
+  b(lue) 0-255
+  a(lfa) indica a transparência e vai de 0 até 1, podendo informar decimais 0.1, 0.2, ..
+
+  então um rgba(255, 255, 255, 0.1) é um branco absoluto com transparência 0.1
+
+===================================================================
+como verificar quais recursos de CSS são aceitos nos browsers
+===================================================================
+acessar caniuse.com
+Na caixa de diálog Can I use     ? digitar o recurso e aparecerá como está
+a aceitação nos browsers
+
+===================================================================
+Instalando e usando biblioteca pública de icones
+===================================================================
+1) acessar o site ionicons.io
+2) acessar a opção Usage no topo da página do lado direito ou acessar diretamente o link https://ionic.io/ionicons/usage
+3) na sessão Installation, copiar as duas tags <script e colar antes da tag </body>
+4) para usar qualquer icone, ir na sessão Basic usage e copiar a tag <ion-icon e trocar, no elementro name=, o nome do ícone que deseja
+5) para escolher e obter o nome do ícone, acessa a opções Icons no topo da página e no box Search icons digitar o ícone ou mesmo escolher nas listas abaixo do box
+6) clicar no icone e aparecerá um box informando o nome do icone
+
+===================================================================
+JS - ambientes onde se pode executar o JS para testar, por exemplo
+===================================================================
+1) Browser, com a ferramenta DevTools (no browser, pressionar F12)
+    As instruções são digitadas no box Console, onde aparece o sinal >
+2) Plataformas online: fronteditor.dev ou codepen.io
+3) Localmente no computador
+
+===================================================================
+JS - objetos, que são o core do JS
+===================================================================
+ - Objetos são atribuições de uma variável que contém atributos (variáveis e seus valores) e também métodos (ações que este objeto pode executar)
+
+  - exemplo de um objeto:
+  const celular = {
+    cor: "preto",
+    marca: "samsung",
+    acaoLigar: function () { alert("ligando...")}
+  }
+
+  Podemos acessar o objeto das seguintes formas:
+  > celular.cor, e será obtido o valor (no caso "preto") atribuido à variável cor
+  > celular.acaoLigar(), e executará os comandos atribuidos ao método acaoLigar
+
+Um exemplo de objetos do JS são as que já existem no browser, como por exemplo o objeto document que seria toda a página web ativa no momento
+
+1) vamos abrir o link google.com
+2) vamos usar o objeto document para obter o primeiro elemento que contenha "a" (tag de link) => document.querySelector("a"), sendo que querySelector é um método que já está no objeto document
+    No caso da página google.com, o resultado que primeiro foi encontrado, foi o link Gmail que está no topo direito da página
+3) podemos obter o elemento "a" e pedir para ele ser "clicado", digitando document.querySelector("a").click(), sendo que o click é outro método do objeto document. Neste caso o gmail seria aberto como se tivéssemos clicado com o mouse na opção no browser.
+
+Todos estes comandos podem ser dados no F12 do browser, no box console
+
+===================================================================
+GIT
+===================================================================
+
+Conceitos básicos
+- repository: onde fica o histórico do projeto
+- branch: linha do tempo do projeto
+- commit: pontos da história do projeto
+- stage: preparação do que será enviado para o commit
+
+Comandos básicos
+- git init: inicia o git (repositório) do projeto
+- git add .: adiciona os arquivos no stage
+- git commit -m "message here": cria e descreve o ponto da história do projeto
+- git push: envia alterações para o repositório remoto 
+
+===================================================================
+VSCode
+===================================================================
+- para abrir uma sessão de terminal no vscode: ctrl-j
+- selecionar a opção de terminal Bash
+- git -v irá mostrar se o git está instalado e qual a versão
+- git init irá criar o repositório local do projeto
+- git add . irá associar todos os elementos do projeto na área de stage area 
+- 
+

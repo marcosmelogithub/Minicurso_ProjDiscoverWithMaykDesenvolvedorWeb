@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- lang="pt-br" é para que seja suportados os caracteres em português -->
+<html lang="pt-br" class="">
+  <!-- escolhe qq tag e cria uma  classe 
+                                           esta etapa é para demonstrar como alterar 
+                                           cor da fonte e fundo do app através da declaração 
+                                           de uma classe e variáveis no css 
+                                           para este exemplo, a classe lightmode, irá 
+                                           determinar as variáveis com a cor da fonte e
+                                           fundo da tela -->
+  <head>
+    <!-- link para a família de fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- UTF-8 é o conjunto de caracteres que aceita caracteres especiais -->
+    <meta charset="UTF-8" />
+
+    <!-- a linha meta abaixo informa que a visualização poderá se adaptar com a tela do device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- o que estiver escrito na tag title, aparecerá no título da aba no browser -->
+    <title>Projeto Discover with Mayk</title>
+
+    <!-- na tag link é informado o arquivo (ou arquivos) css utilizado 
+         a informação ./nome-arq-css, indica que o arquivo está na pasta do projeto
+         pode tb informar somente o nome-arq-css, sem o ./ -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="profile">
+        <img
+          src="./assets/avatar.png"
+          alt="Foto do Mayk Brito, sorrindo, de óculos, com cavanhaque e fundo amarelo"
+        />
+        <p>@maykbrito</p>
+      </div>
+
+      <!-- switch que irá fazer a troca entre o dark e light da aparência do fundo do app -->
+      <div id="switch" onclick="toggleLightMode()">
+        <button></button>
+        <!-- qdo o botão for clicado,
+                                                           será executada a função
+                                                           javascript toggleLightMode -->
+        <!-- irá conter a imagem -->
+        <span></span>
+        <!-- irá ser o switcher -->
+      </div>
+
+      <ul>
+        <li><a href="#">Inscrever-se no NLW</a></li>
+        <li><a href="#">Baixar meu ebook</a></li>
+        <li>
+          <a href="https://github.com/maykbrito" target="_blank"
+            >Ver meu portfólio</a
+          >
+        </li>
+        <li>
+          <a href="https://rocketseat.com.br/explorer" target="_blank"
+            >Conheça o Explorer</a
+          >
+        </li>
+      </ul>
+
+      <div id="social-links">
+        <a href="https://github.com/maykbrito" target="_blank">
+          <ion-icon name="logo-github"></ion-icon
+        ></a>
+        <a href="https://instagram.com/maykbrito" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon
+        ></a>
+        <a href="https://youtube.com/maykbrito" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon
+        ></a>
+        <a href="https://linkedin.com/in/maykbrito" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon
+        ></a>
+      </div>
+
+      <!-- criando o rodapé do container -->
+      <footer>
+        Feito com amor pela
+        <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>
+      </footer>
+    </div>
+
+    <!-- aqui instala a biblioteca de icones indicada pelo projeto
+         a partir do link https://ionic.io/ionicons/usage  ir em Installation, 
+         copiar o código abaixo e colar, por recomendação do site, antes do fechar <body> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- acrescentando a tag para importar o arquivos script.js que contém 
+         os códigos javascript -->
+    <script src="./script.js"></script>
+  </body>
+</html>

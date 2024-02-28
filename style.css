@@ -1,0 +1,235 @@
+/* o bloco * é utilizado para fazer um reset no css que irá limpar os padrões que
+   não queremos que sejam utilizados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* o elemento box-sizing: border-box diz para o css que tudo que for 
+                             configurado de estilo em cada box, é para ficar dentro do box */
+}
+
+/* bloco padrão com as variáveis e valores padrão do projeto */
+:root {
+  --text-color: #ffffff; /* var com a cor da fonte */
+  --bg-img: url("./assets/bg-mobile.jpg"); /* var com a imagem de fundo */
+
+  --bg-colorlinkslist: rgba(255, 255, 255, 0.1); /* var cor fundo listas */
+  --border-colorlinkslist: rgba(255, 255, 255, 0.5); /* var cor bordas listas */
+  --border-colorlinkslisthover: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* var cor borda listas hover */
+  --bg-colorlinkslisthover: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* var cor fundo listas hover */
+
+  --bg-colorsociallinkshover: rgba(255, 255, 255, 0.2);
+
+  --switch-bgimg: url(./assets/moon-stars.svg);
+}
+
+.lightmode {
+  /* atribuição das variáveis e valores para esta classe */
+  --text-color: #000000; /* var com a cor fonte */
+  --bg-img: url("./assets/bg-mobile-light.jpg"); /* var com a imagem de fundo */
+
+  --bg-colorlinkslist: rgba(0, 0, 0, 0.1);
+  --border-colorlinkslist: rgba(0, 0, 0, 0.2);
+  --border-colorlinkshover: rgbargba(0, 0, 0, 0.2);
+  --bg-colorlinkslisthover: rgba(0, 0, 0, 0.2);
+
+  --bg-colorsociallinkshover: rgba(0, 0, 0, 0.2);
+
+  --switch-bgimg: url(./assets/sun.svg);
+}
+
+body {
+  background-image: var(--bg-img);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  /*
+    as linhas acima do background podem ser descritas em uma única linha
+    da seguinte forma
+    
+    background: url("./assets/bg-mobile.jpg") no-repeat top center/cover;
+
+    a sequência do background é: color image repeat position/size e tem, quando
+    escrever em uma linha, respeitar esta sequência
+  */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  color: var(--text-color); /* usando a variável para cor da fonte */
+}
+
+/* box container conforme especificado no projeto no sigma - vide AnotaçõesMMelo.txt*/
+#container {
+  /* height: 712px;   altura do container
+                      por regra não se especifica a altura para permitir
+                      fluidez no browser, ou seja, à medida que se vai adicionando elementos
+                      no box, a altura vai se ajustando e empurrando os outros boxes prá baixo.
+                      Assim, define-se apenas a largura*/
+  width: 360px; /* largura do container  no figma era 558px, mas o Mayk usou 360px*/
+  /* border: 1px solid red; /* cria uma linha em volta do container */
+  margin: auto; /* alinha o container ao meio, por regra do CSS só alinha à direita e esquerda*/
+  margin-top: 56px; /* o margin-top irá adicionar, dentro do box container, 
+                        um preenchimento, acima da imagem, de 56px
+                        Poderia ser também um padding-top: 56px */
+
+  /* o elemento margin funciona da seguinte forma:
+     a) informar os 4 margins (top, right, bottom e left) ou
+     b) 2 informações, a 1a aplicará para top e bottom e a 2a para right e left ou
+     c) 3 informaçoes, a 1a aplicará para top, a 2a para right e left e a 3a para bottom
+
+     então, no caso acima, poderia ser: margim: 56px, auto, 0px;
+     aplicando top, right+left e bottom
+  */
+  padding: 0 24px;
+}
+
+/* Estilizando o profile */
+#profile {
+  text-align: center; /* quando se define para o box inteiro para text-align: center/rigth/left
+                         todos os elementos do box se alinharão pelo text-align 
+                         Neste caso, para elementos inline, não é necessário fazer a alteração
+                         do display de inline para block e nem utilizar o elemento 
+                         margin: auto */
+  padding: 24px; /* o padding com somente uma informação, no caso 24px, irá aplicar um
+                    preenchimento de 24px nos quatro lados do box */
+}
+
+#profile img {
+  /* display: block; /* como o elemento img é inline, não suporta alinhamento ao centro
+                      como especificado no projeto do sigma,
+                      então é preciso alterar para display block e assim
+                      o margin auto, que irá alinhar no centro funcionará 
+                      Mas, se o text-align do box-pai estiver com o elemento
+                      text-align: center, não é necessário aplicar esta ação, nem o margin:auto */
+  width: 112px;
+  /* margin: auto;*/
+}
+
+#profile p {
+  font-weight: 500; /* indica o "peso* da fonte - seria, a grosso modo, o efeito bold */
+  /* font-size: 16px; /* o padrão font-size é 16px, então, se não quiser, não precisa definir */
+  line-height: 24px;
+  margin-top: 8px; /* irá adicionar um preenchimento de 8px entre o fim da imagem e o texto @may */
+}
+
+/* Estilizando o Switch */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 1) var(--switch-bgimg) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.lightmode #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background-color: var(--bg-colorlinkslist);
+  border: 1px solid var(--border-colorlinkslist);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* Estilizando as opções da lista dos 4 links */
+ul {
+  list-style: none; /* retirar todos os estilos da lista, inclusive os bullets */
+  display: flex; /* transforma de inline para block */
+  flex-direction: column; /* estabelece que cada link estará disposto em colunas */
+  gap: 16px; /* cria um espaço de 16px entre cada link*/
+  padding: 24px 0;
+}
+
+ul li a {
+  /* estilizando os textos dos links */
+  display: flex;
+  align-items: center; /* centraliza os textos verticalmente */
+  justify-content: center; /* centraliza os textos horizontalmente */
+  padding: 16px 24px; /* cria preenchimento top/bottom 16px e left/right 24px para
+                         cada link, criando uma distância entre eles*/
+  background: var(--bg-colorlinkslist); /* cor de fundo de cada elemento link */
+  border: 1px solid var(--border-colorlinkslist); /* cria uma borda para cada link */
+  border-radius: 8px; /* arrendonda as bordas */
+  backdrop-filter: blur(4px); /* faz um embasamento no fundo do elemento */
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /* alguns browsers, safari, por exemplo, precisa do 
+                                         prefixo -webkit- antes do backdrop-filter */
+  text-decoration: none; /* elimina a linha que fica abaixo de todo link por padrão */
+  font-weight: 500; /* efeito de espessura das fontes, pode ir até 900, sendo que
+                       a partir de 400 já é o efeito bold, abaixo a espessura é mais fina*/
+  transition: background 0.2s; /* temporiza o background do hover  para dar efeito 
+                                  mais suave */
+}
+
+ul li a:hover {
+  /* efeito quando passar o mouse por cima do elemento */
+  background: var(--bg-colorlinkslisthover);
+  border: 1.5px solid var(--border-colorlinkslisthover);
+}
+
+/* Estilizando os social links */
+#social-links {
+  display: flex; /* mostra os ícones um do lado do outro */
+  justify-content: center; /* centraliza todos os icones */
+  /* gap: 32px;  cria um espaço entre cada icone 
+     quando evoluiu o projeto, o Mayk mudou o gap para 16px, mas mesmo assim continuou 
+     muito distante e então o Mayk retirou o gap. Fica aqui como registro */
+  font-size: 24px; /* estabelece o tamanho dos icones */
+}
+
+#social-links a {
+  display: flex; /* força com que os ícones fiquem em linha horizontal */
+  align-items: center; /* alinha os ícones centralmente */
+  justify-content: center; /* centraliza os ícones */
+  padding: 16px; /* cria preenchimento em cada lado de cada icone */
+  transition: background 0.2s; /* tempo para transição para houver */
+  border-radius: 50%; /* o ícone fica envolvido em um círculo */
+}
+
+#social-links a:hover {
+  /* ao passar mouse sobre cada icone das redes sociais os efeitos abaixo acontecerão */
+  background: var(--bg-colorsociallinkshover); /* cor do fundo do ícone */
+}
+
+/* Estilizando o footer */
+footer {
+  font-size: 14px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
