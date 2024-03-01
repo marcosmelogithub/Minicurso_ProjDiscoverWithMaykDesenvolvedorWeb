@@ -79,8 +79,9 @@ body * {
                       fluidez no browser, ou seja, à medida que se vai adicionando elementos
                       no box, a altura vai se ajustando e empurrando os outros boxes prá baixo.
                       Assim, define-se apenas a largura*/
-  width: 360px; /* largura do container  no figma era 558px, mas o Mayk usou 360px*/
-  /* border: 1px solid red; /* cria uma linha em volta do container */
+  width: 100%; /* para ajustar ao tamanho da tela onde estará sendo exibido */
+  max-width: 588px;
+  /* determina o máximo que esta largura de 100% poderá chegar em px */
   margin: auto; /* alinha o container ao meio, por regra do CSS só alinha à direita e esquerda*/
   margin-top: 56px; /* o margin-top irá adicionar, dentro do box container, 
                         um preenchimento, acima da imagem, de 56px
