@@ -35,7 +35,7 @@
 .lightmode {
   /* atribuição das variáveis e valores para esta classe */
   --text-color: #000000; /* var com a cor fonte */
-  --bg-img: url("./assets/bg-mobile-light.jpg"); /* var com a imagem de fundo */
+  --bg-img: url("./assets/bg-mobile-light.jpg"); /* var com a imagem light de fundo */
 
   --bg-colorlinkslist: rgba(0, 0, 0, 0.1);
   --border-colorlinkslist: rgba(0, 0, 0, 0.2);
@@ -52,6 +52,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  height: 100vh;
 
   /*
     as linhas acima do background podem ser descritas em uma única linha
@@ -233,4 +234,15 @@ footer {
 
 footer a {
   text-decoration: none;
+}
+
+/* Estilizando a imagem de fundo conforme a variação do tamanho da tela  media queries */
+@media (min-width: 700px) {
+  :root {
+    --bg-img: url("./assets/bg-desktop.jpg");
+  }
+
+  .lightmode {
+    --bg-img: url("./assets/bg-desktop-light.jpg");
+  }
 }
