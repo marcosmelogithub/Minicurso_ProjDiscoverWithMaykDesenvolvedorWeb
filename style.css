@@ -146,11 +146,24 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: switch-dark 0.3s; /* quando clicar para mudar para dark 
+                                executa a animação switch-dark
+                                e não precisa do forwards, porque já o left: 0
+                                como default do projeto */
+}
+
+#switch button:hover {
+  outline: 8px solid var(--bg-colorsociallinkshover); /* efeito de sombra em volta 
+                                                          dos botões dark e light 
+                                                          quando passar o mouse */
 }
 
 .lightmode #switch button {
-  right: 0;
-  left: initial;
+  animation: switch-light 0.3s forwards; /* qdo clicar para mudar para light 
+                                            executa a animação switch-light 
+                                            o 0.2s é o tempo da transição
+                                            o forwards é para manter no valor do
+                                            to {} da animação */
 }
 
 #switch span {
@@ -236,7 +249,7 @@ footer a {
   text-decoration: none;
 }
 
-/* Estilizando a imagem de fundo conforme a variação do tamanho da tela  media queries */
+/* Estilizando imagem de fundo conforme a variação tamanho tela browser - media queries */
 @media (min-width: 700px) {
   :root {
     --bg-img: url("./assets/bg-desktop.jpg");
@@ -244,5 +257,26 @@ footer a {
 
   .lightmode {
     --bg-img: url("./assets/bg-desktop-light.jpg");
+  }
+}
+
+/* Estilizando o deslize do botão para light e dark - animation*/
+@keyframes switch-light {
+  /* ligando o light */
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes switch-dark {
+  /* ligando o dark */
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
