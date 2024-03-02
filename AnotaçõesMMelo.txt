@@ -142,12 +142,25 @@ Comandos básicos
 - git push: envia alterações para o repositório remoto 
 
 ===================================================================
-VSCode
+Comandos GitHub no terminal do VSCode
 ===================================================================
 - para abrir uma sessão de terminal no vscode: ctrl-j
 - selecionar a opção de terminal Bash
 - git -v irá mostrar se o git está instalado e qual a versão
 - git init irá criar o repositório local do projeto
 - git add . irá associar todos os elementos do projeto na área de stage area 
-- 
 
+===================================================================
+Disponibilizando o acesso ao app via GitHub para as pessoas
+acessarem e usarem (não é o código)
+===================================================================
+1) no GitHub ir em settings
+2) no menu lateral esquerdo, clicar em Pages
+3) escolher a branch main
+4) clicar em Save (demora uns 5 minutos para atualizar)
+5) o link será:
+  "https://" + nome_usuario_do_github + ".github.io/" + nome_proj
+
+  No caso deste estudo o link ficará da seguinte forma:
+  https://marcosmelogithub.github.io/Minicurso_ProjDiscoverWithMaykDesenvolvedorWeb
+  e este link poderá ser passado para as pessoas acessarem
